@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c81chmjl3u7er"]
+
+[ext_resource type="Script" uid="uid://dkc67hf8el85u" path="res://firefly.gd" id="1_fc1d2"]
+[ext_resource type="Texture2D" uid="uid://dnp73nk1xfsr4" path="res://firefly.png" id="2_elt3m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoos8"]
+atlas = ExtResource("2_elt3m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7aac"]
+atlas = ExtResource("2_elt3m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prqgs"]
+atlas = ExtResource("2_elt3m")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhdb3"]
+atlas = ExtResource("2_elt3m")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5l5sw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qoos8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7aac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prqgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhdb3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c4s0m"]
+radius = 14.0
+
+[sub_resource type="Gradient" id="Gradient_fc1d2"]
+colors = PackedColorArray(1, 1, 0.9098039, 0.2627451, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5l5sw"]
+gradient = SubResource("Gradient_fc1d2")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8804348, 0.14347826)
+
+[node name="firefly" type="Area2D" unique_id=137443515]
+scale = Vector2(2, 2)
+script = ExtResource("1_fc1d2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=922338300]
+sprite_frames = SubResource("SpriteFrames_5l5sw")
+autoplay = "default"
+frame = 3
+frame_progress = 0.107171334
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1897155526]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_c4s0m")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=526903972]
+light_mask = 3
+range_layer_min = -1
+range_layer_max = 1
+texture = SubResource("GradientTexture2D_5l5sw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://blgiwgcep0ir5"]
+
+[ext_resource type="Texture2D" uid="uid://rrlucwjvqbwl" path="res://1.png" id="2_ik8t4"]
+[ext_resource type="Texture2D" uid="uid://b5q7mysarr2fn" path="res://2.png" id="3_n5yoo"]
+[ext_resource type="FontFile" uid="uid://chkaatfl1rj07" path="res://PressStart2P-Regular.ttf" id="4_ed3bb"]
+[ext_resource type="AudioStream" uid="uid://bb5pf1hvc040y" path="res://main menu music.mp3" id="4_rax26"]
+
+[node name="victory_screen" type="Control" unique_id=1818165737]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=80314375]
+modulate = Color(0.27387273, 0.27387273, 0.27387273, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_ik8t4")
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1542217077]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_n5yoo")
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=24911594]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1695618100]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ed3bb")
+theme_override_font_sizes/font_size = 36
+text = "You're home"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=768972210]
+stream = ExtResource("4_rax26")
+volume_db = -5.0
+autoplay = true
