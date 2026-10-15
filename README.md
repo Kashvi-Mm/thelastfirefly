@@ -10,6 +10,7 @@ A short 2D platformer I made for Hack Club Jumpstart. You're in a dark forest, a
 
 ### Controls
 Move: A / D or arrow keys
+
 Jump: Space, W, or up arrow
 
 ### Made with
