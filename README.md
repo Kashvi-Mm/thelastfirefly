@@ -1,10 +1,8 @@
+## The Last Firefly
+
 _The forest used to glow with a thousand small lights. One by one, they went dark.
 You're the last firefly-born, and your own glow is fading too.
 Find what's left of your kin. Let their light carry you home._
-
-----
-
-## The Last Firefly
 
 A short 2D platformer I made for Hack Club Jumpstart. You're in a dark forest, and your bug glow is the only light you've got. It keeps running low, so you have to find other firefly bugs to keep it going. The game currently has one level.
 
